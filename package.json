@@ -14,6 +14,7 @@
   "devDependencies": {
     "@arco-design/web-vue": "^2.45.3",
     "@vitejs/plugin-vue": "^4.0.0",
+    "axios": "^1.4.0",
     "stylus": "^0.59.0",
     "vite": "^4.0.0"
   }
