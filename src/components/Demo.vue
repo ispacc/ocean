@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <a-form :model="form" :style="{ width: '400px' }" @submit="handleSubmit">
+    <a-form :model="form" :style="{ width: '400px' }">
       <a-form-item field="name" label="Username: ">
         <a-input
             v-model="form.name"
@@ -25,9 +25,6 @@ const form = reactive({
   post: '',
   isRead: false
 });
-const handleSubmit = (data) => {
-  console.log(data);
-};
 
 const login = () => {
 
