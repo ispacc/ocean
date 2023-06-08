@@ -1,10 +1,10 @@
-<script lang="ts" setup>
-import Demo from '../src/components/Demo.vue'
-</script>
-
 <template>
   <Demo/>
 </template>
+
+<script lang="ts" setup>
+import Demo from '../src/components/Demo.vue'
+</script>
 
 <style scoped>
 .logo {
