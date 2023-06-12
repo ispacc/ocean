@@ -7,11 +7,12 @@
             placeholder="please enter your username..."
         />
       </a-form-item>
-      <a-form-item field="post" label="password: ">
-        <a-input-password :style="{width:'400px'}" allow-clear placeholder="Please enter password"/>
+      <a-form-item field="password" label="password: ">
+        <a-input-password v-model="form.password" :style="{width:'400px'}" allow-clear
+                          placeholder="Please enter password"/>
       </a-form-item>
       <a-form-item class="bottom">
-        <a-button @click="login">login</a-button>
+        <a-button @click="commit">login</a-button>
       </a-form-item>
     </a-form>
   </div>
@@ -19,17 +20,21 @@
 
 <script lang="ts" setup>
 import {reactive} from 'vue'
+import {login} from "../api";
 
 const form = reactive({
   name: '',
   post: '',
+  password: '',
   isRead: false
 });
 
-const login = () => {
-
+async function commit() {
+  const data = await login({
+    name: form.name,
+    password: form.password
+  })
 }
-
 </script>
 
 <style lang="stylus">

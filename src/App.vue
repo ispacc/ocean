@@ -1,9 +1,9 @@
 <template>
-  <Demo/>
+  <login/>
 </template>
 
 <script lang="ts" setup>
-import Demo from '../src/components/Demo.vue'
+import Login from "./components/login.vue";
 </script>
 
 <style scoped>

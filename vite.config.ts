@@ -11,5 +11,16 @@ export default defineConfig({
         alias: {
             '@': '/src',
         },
+    },
+    server: {
+        cors: true,
+        open: true,
+        proxy: {
+            '/api': {
+                target: 'https://api.flysean.xyz', //代理接口
+                changeOrigin: true,
+                rewrite: (path) => path.replace(/^\/api/, '')
+            }
+        }
     }
 })
