@@ -34,6 +34,7 @@ async function commit() {
     name: form.name,
     password: form.password
   })
+  alert("登录成功")
 }
 </script>
 

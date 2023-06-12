@@ -2,7 +2,7 @@ import axios from "./request";
 
 export const login = (data: any): Promise<any> | false => {
     return axios({
-        url: "/login",
+        url: "/admin/login",
         method: "post",
         data,
         config: {
