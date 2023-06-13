@@ -24,7 +24,7 @@ export default defineConfig(({mode, command}) => {
             proxy: {
                 '/api': {
                     // target: 'http://localhost:8081',
-                    target: 'http://114.55.4.19:8081',
+                    target: 'https://114.55.4.19:8081',
                     changeOrigin: true,
                     ws: true,
                 },
