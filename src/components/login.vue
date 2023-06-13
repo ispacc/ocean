@@ -21,6 +21,7 @@
 <script lang="ts" setup>
 import {reactive} from 'vue'
 import {login} from "../api";
+import {Message} from "@arco-design/web-vue";
 
 const form = reactive({
   name: '',
@@ -31,10 +32,12 @@ const form = reactive({
 
 async function commit() {
   const data = await login({
-    name: form.name,
+    username: form.name,
     password: form.password
   })
-  alert("登录成功")
+  if (+data.code === 200) {
+    Message.info('打倒习近平')
+  }
 }
 </script>
 

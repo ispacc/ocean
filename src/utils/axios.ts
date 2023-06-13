@@ -24,13 +24,13 @@ instance.interceptors.response.use(
         // 对响应数据做点什么
         // 隐藏加载图
         // 获取code
-        const res = response.data;
+        const data = response.data;
         // 返回成功
-        if (res == 200) {
-            return res;
+        if (data.code == 200) {
+            return data;
         }
         // token 异常
-        if (res === 508 || res === 512 || res === 514) {
+        if (data.code === 508 || data.code === 512 || data.code === 514) {
             // 登出 清除token缓存
         }
         return response;
