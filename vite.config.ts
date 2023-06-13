@@ -27,7 +27,6 @@ export default defineConfig(({mode, command}) => {
                     target: 'http://114.55.4.19:8081',
                     changeOrigin: true,
                     ws: true,
-                    rewrite: (path) => path.replace('/api', '')
                 },
             },
             https: false,
