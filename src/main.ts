@@ -2,6 +2,7 @@ import './assets/main.css'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
+import ArcoVue from '@arco-design/web-vue'
 import router from './router'
 
 import App from './App.vue'
@@ -13,6 +14,7 @@ document.title = import.meta.env.VITE_APP_TITLE
 const app = createApp(App)
 app.use(createPinia())
 app.provide('$http', Axios)
+app.use(ArcoVue)
 app.use(router)
 
 // 全量引入Element UI

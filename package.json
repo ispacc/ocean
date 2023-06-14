@@ -12,6 +12,7 @@
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@arco-design/web-vue": "^2.47.1",
     "@vueuse/core": "^10.1.2",
     "axios": "^0.27.2",
     "element-plus": "^2.3.5",

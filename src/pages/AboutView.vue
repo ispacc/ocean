@@ -1,13 +1,53 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <a-form :model="form" :style="{ width: '600px' }" @submit="handleSubmit">
+      <a-form-item
+        field="name"
+        tooltip="Please enter username"
+        label="Username"
+      >
+        <a-input
+          v-model="form.name"
+          placeholder="please enter your username..."
+        />
+      </a-form-item>
+      <a-form-item field="post" label="Post">
+        <a-input v-model="form.post" placeholder="please enter your post..." />
+      </a-form-item>
+      <a-form-item>
+        <a-button html-type="submit">Submit</a-button>
+      </a-form-item>
+    </a-form>
   </div>
 </template>
+
+<script lang="ts" setup>
+import { reactive } from 'vue'
+import { Message } from '@arco-design/web-vue'
+import { publicApi } from '@/apis'
+
+const form = reactive({
+  name: '',
+  post: ''
+})
+const handleSubmit = () => {
+  publicApi
+    .login(form.name, form.name)
+    .then((v) => {
+      console.log(v)
+      Message.success('获取成功')
+    })
+    .catch((err) => {
+      Message.error(err.message)
+    })
+}
+</script>
 
 <style scoped>
 .about {
   text-align: center;
 }
+
 @media (min-width: 1024px) {
   .about {
     min-height: 100vh;
