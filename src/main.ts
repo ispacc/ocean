@@ -3,11 +3,12 @@ import './assets/main.css'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import ArcoVue from '@arco-design/web-vue'
+
 import router from './router'
 
 import App from './App.vue'
 import Axios from './apis/ajax'
-// import mountElementUI from './utils/elementUI'
+import '@arco-design/web-vue/dist/arco.css'
 
 document.title = import.meta.env.VITE_APP_TITLE
 
@@ -16,6 +17,8 @@ app.use(createPinia())
 app.provide('$http', Axios)
 app.use(ArcoVue)
 app.use(router)
+
+document.body.setAttribute('arco-theme', 'dark')
 
 // 全量引入Element UI
 // mountElementUI(app)

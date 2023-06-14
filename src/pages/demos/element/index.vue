@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-button type="primary">{{ msg }}</el-button>
+    <a-button>{{ msg }}</a-button>
   </div>
 </template>
 <script lang="ts" setup>

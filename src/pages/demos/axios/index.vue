@@ -7,8 +7,8 @@
 </template>
 <script lang="ts" setup>
 import { AxiosInstance } from 'axios'
-import { ElMessage } from 'element-plus'
-import { ref, inject } from 'vue'
+import { inject, ref } from 'vue'
+import { Message } from '@arco-design/web-vue'
 import { publicApi } from '../../../apis/index'
 
 const phone = ref('12345678901')
@@ -20,10 +20,10 @@ const getCode = () => {
     .getCode2(phone.value)
     .then((v) => {
       console.log(v)
-      ElMessage.success(`获取成功 ${v.num}`)
+      Message.success(`获取成功 ${v.num}`)
     })
     .catch((err) => {
-      ElMessage.error(err.message)
+      Message.error(err.message)
     })
 }
 </script>

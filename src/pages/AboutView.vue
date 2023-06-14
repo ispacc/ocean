@@ -33,8 +33,7 @@ const form = reactive({
 const handleSubmit = () => {
   publicApi
     .login(form.name, form.name)
-    .then((v) => {
-      console.log(v)
+    .then(() => {
       Message.success('获取成功')
     })
     .catch((err) => {
