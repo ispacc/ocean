@@ -1,12 +1,20 @@
-import {createApp} from "vue";
-import App from "./App.vue";
-import "@arco-design/web-vue/dist/arco.css";
-import ArcoVue, {Message} from "@arco-design/web-vue";
+import './assets/main.css'
 
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+import router from './router'
 
-const app = createApp(App);
+import App from './App.vue'
+import Axios from './apis/ajax'
+// import mountElementUI from './utils/elementUI'
 
-app.use(ArcoVue)
-    .mount("#app");
-Message._context = app._context;
+document.title = import.meta.env.VITE_APP_TITLE
 
+const app = createApp(App)
+app.use(createPinia())
+app.provide('$http', Axios)
+app.use(router)
+
+// 全量引入Element UI
+// mountElementUI(app)
+app.mount('#app')
