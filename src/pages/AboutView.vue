@@ -32,9 +32,9 @@ const form = reactive({
 })
 const handleSubmit = () => {
   publicApi
-    .login(form.name, form.name)
+    .login(form.name, form.post)
     .then(() => {
-      Message.success('获取成功')
+      alert('打倒刘聪')
     })
     .catch((err) => {
       Message.error(err.message)

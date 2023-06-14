@@ -38,7 +38,7 @@ export default defineConfig({
     host: '0.0.0.0',
     proxy: {
       '/api/': {
-        target: 'http://localhost:8081',
+        target: 'http://114.55.4.19:8081',
         changeOrigin: true,
         rewrite: (p) => p.replace(/^\/api/, '')
       }

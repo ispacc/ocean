@@ -11,12 +11,12 @@ const Element = () => import('@/pages/demos/element/index.vue')
 const routes: RouteRecordRaw[] = [
   { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFind },
   {
-    path: '/',
+    path: '/home',
     name: 'home',
     component: HomeView
   },
   {
-    path: '/about',
+    path: '/',
     name: 'about',
     // route level code-splitting
     // this generates a separate chunk (About.[hash].js) for this route

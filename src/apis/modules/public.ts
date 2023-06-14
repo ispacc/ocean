@@ -24,7 +24,7 @@ function getCode2(phone: string): Promise<{ num: number }> {
   })
 }
 
-function login(username: string, password: string): Promise<{}> {
+function login(username: string, password: string): Promise<{ code: string }> {
   return ajax.post('admin/login', {
     username,
     password
