@@ -1,17 +1,13 @@
 <template>
   <div class="about">
     <a-form :model="form" :style="{ width: '600px' }" @submit="handleSubmit">
-      <a-form-item
-        field="name"
-        tooltip="Please enter username"
-        label="Username"
-      >
+      <a-form-item field="name" label="Username:">
         <a-input
           v-model="form.name"
           placeholder="please enter your username..."
         />
       </a-form-item>
-      <a-form-item field="post" label="Post">
+      <a-form-item field="post" label="password:">
         <a-input v-model="form.post" placeholder="please enter your post..." />
       </a-form-item>
       <a-form-item>
