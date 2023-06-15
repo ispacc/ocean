@@ -18,8 +18,4 @@ app.provide('$http', Axios)
 app.use(ArcoVue)
 app.use(router)
 
-document.body.setAttribute('arco-theme', 'dark')
-
-// 全量引入Element UI
-// mountElementUI(app)
 app.mount('#app')
