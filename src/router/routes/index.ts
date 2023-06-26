@@ -2,6 +2,7 @@ import type { RouteRecordRaw } from 'vue-router'
 import HomeView from '@/pages/HomeView.vue'
 import Dynamic from '@/pages/demos/dynamic/index.vue'
 import VueUse from '@/pages/demos/vueuse/index.vue'
+import ChatRoom from '@/pages/chat/ChatRoom.vue'
 
 const NotFind = () => import('@/pages/404/index.vue')
 const demosWrapper = () => import('@/pages/demos/index.vue')
@@ -16,12 +17,9 @@ const routes: RouteRecordRaw[] = [
     component: HomeView
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (About.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import('../../pages/AboutView.vue')
+    path: '/chat',
+    name: 'chat',
+    component: ChatRoom
   },
   {
     path: '/demos',
