@@ -93,9 +93,6 @@ devDependencies:
   unplugin-auto-import:
     specifier: ^0.7.2
     version: registry.npmmirror.com/unplugin-auto-import@0.7.2(@vueuse/core@10.1.2)(vite@4.3.9)
-  unplugin-element-plus:
-    specifier: ^0.4.1
-    version: registry.npmmirror.com/unplugin-element-plus@0.4.1(vite@4.3.9)
   unplugin-vue-components:
     specifier: ^0.19.9
     version: registry.npmmirror.com/unplugin-vue-components@0.19.9(vite@4.3.9)(vue@3.3.4)
@@ -2203,12 +2200,6 @@ packages:
       typed-array-length: registry.npmmirror.com/typed-array-length@1.0.4
       unbox-primitive: registry.npmmirror.com/unbox-primitive@1.0.2
       which-typed-array: registry.npmmirror.com/which-typed-array@1.1.9
-    dev: true
-
-  registry.npmmirror.com/es-module-lexer@0.10.5:
-    resolution: {integrity: sha512-+7IwY/kiGAacQfY+YBhKMvEmyAJnw5grTUgjG85Pe7vcUI/6b7pZjZG8nQ7+48YhzEAEqrEgD2dCz/JIK+AYvw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/es-module-lexer/-/es-module-lexer-0.10.5.tgz}
-    name: es-module-lexer
-    version: 0.10.5
     dev: true
 
   registry.npmmirror.com/es-set-tostringtag@2.0.1:
@@ -4693,24 +4684,6 @@ packages:
       magic-string: registry.npmmirror.com/magic-string@0.26.7
       resolve: registry.npmmirror.com/resolve@1.22.2
       unplugin: registry.npmmirror.com/unplugin@0.6.3(vite@4.3.9)
-    transitivePeerDependencies:
-      - esbuild
-      - rollup
-      - vite
-      - webpack
-    dev: true
-
-  registry.npmmirror.com/unplugin-element-plus@0.4.1(vite@4.3.9):
-    resolution: {integrity: sha512-x8L35sppkbtnAf+aSPXNsLPjCUrM0mWKgujqMIgrHiDQaGbpMlNnbN2kjP5CMclykNOw8fUCreEhtxPyzg8tmw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/unplugin-element-plus/-/unplugin-element-plus-0.4.1.tgz}
-    id: registry.npmmirror.com/unplugin-element-plus/0.4.1
-    name: unplugin-element-plus
-    version: 0.4.1
-    engines: {node: '>=14.19.0'}
-    dependencies:
-      '@rollup/pluginutils': registry.npmmirror.com/@rollup/pluginutils@4.2.1
-      es-module-lexer: registry.npmmirror.com/es-module-lexer@0.10.5
-      magic-string: registry.npmmirror.com/magic-string@0.26.7
-      unplugin: registry.npmmirror.com/unplugin@0.7.2(vite@4.3.9)
     transitivePeerDependencies:
       - esbuild
       - rollup

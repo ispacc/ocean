@@ -32,7 +32,6 @@ function login(username: string, password: string): Promise<{ code: string }> {
 }
 
 export default {
-  getCode,
   getCode2,
   login
 }

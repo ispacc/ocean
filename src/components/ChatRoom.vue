@@ -1,16 +1,7 @@
-<script lang="ts" setup>
-import SockJS from 'sockjs-client'
-
-function connect() {
-  const sockJS = new SockJS('http://localhost:8081/orion')
-  console.log('test')
-}
-</script>
+<script lang="ts" setup></script>
 
 <template>
-  <div class="about">
-    <a-button type="primary" @click="connect">Test Socket</a-button>
-  </div>
+  <div class="about"></div>
 </template>
 
 <style scoped>

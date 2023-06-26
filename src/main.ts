@@ -1,4 +1,4 @@
-import './assets/main.css'
+// import './assets/base.css'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
@@ -11,7 +11,6 @@ import Axios from './apis/ajax'
 import '@arco-design/web-vue/dist/arco.css'
 
 document.title = import.meta.env.VITE_APP_TITLE
-
 const app = createApp(App)
 app.use(createPinia())
 app.provide('$http', Axios)

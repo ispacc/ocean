@@ -8,7 +8,10 @@
         />
       </a-form-item>
       <a-form-item field="post" label="password:">
-        <a-input v-model="form.post" placeholder="please enter your post..." />
+        <a-input-password
+          v-model="form.post"
+          placeholder="please enter your post..."
+        />
       </a-form-item>
       <a-form-item>
         <a-button html-type="submit">Submit</a-button>
@@ -26,15 +29,9 @@ const form = reactive({
   name: '',
   post: ''
 })
-const handleSubmit = () => {
-  publicApi
-    .login(form.name, form.post)
-    .then(() => {
-      alert('打倒刘聪')
-    })
-    .catch((err) => {
-      Message.error(err.message)
-    })
+const handleSubmit = async () => {
+  const data = await publicApi.login(form.name, form.post)
+  Message.info('登录成功')
 }
 </script>
 
