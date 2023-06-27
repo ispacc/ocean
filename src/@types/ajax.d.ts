@@ -1,7 +1,7 @@
 // 固定的响应格式
 interface BaseResponse<T = any> {
   code: number
-  errMsg: string
+  message: string
   data: T
 }
 

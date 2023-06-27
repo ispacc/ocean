@@ -31,22 +31,21 @@ const form = reactive({
   post: ''
 })
 const handleSubmit = async () => {
-  const { data } = await publicApi.login(form.name, form.post)
-  if (data.code === 200) Message.info('登录成功')
-  router.push({ path: '/chat' })
+  const data = await publicApi.login(form.name, form.post)
+  if (data.code === 200) {
+    Message.info('登录成功')
+    await router.push({ path: '/chat' })
+  } else {
+    Message.error(data.message)
+  }
 }
 </script>
 
 <style scoped>
 .about {
-  text-align: center;
-}
-
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 </style>
