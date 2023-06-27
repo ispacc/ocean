@@ -1,18 +1,33 @@
 import { createApp } from 'vue'
+import dayjs from 'dayjs'
+import 'dayjs/locale/zh-cn'
+import weekday from 'dayjs/plugin/weekday'
+import '@imengyu/vue3-context-menu/lib/vue3-context-menu.css'
+// import 'element-plus/dist/index.css'
 import { createPinia } from 'pinia'
-import ArcoVue from '@arco-design/web-vue'
-
-import router from './router'
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 
 import App from './App.vue'
-import Axios from './apis/ajax'
-import '@arco-design/web-vue/dist/arco.css'
+import router from './router'
 
-document.title = import.meta.env.VITE_APP_TITLE
+import '@/utils/websocket'
+import './styles/main.css'
+import vLogin from './directives/v-login'
+
+// 设置 dayjs 语言
+dayjs.locale('zh-cn')
+// 设置一周起始位周一
+dayjs.extend(weekday)
+
 const app = createApp(App)
-app.use(createPinia())
-app.provide('$http', Axios)
-app.use(ArcoVue)
+
+// app.use(ElementPlus)
+const pinia = createPinia()
+pinia.use(piniaPluginPersistedstate)
+app.use(pinia)
 app.use(router)
+
+// 没登录就要求先登录的指令。
+app.directive('login', vLogin)
 
 app.mount('#app')
