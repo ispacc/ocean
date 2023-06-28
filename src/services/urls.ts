@@ -23,4 +23,5 @@ export default {
   blockUser: `${prefix}/capi/user/black`,
   // 撤回消息
   recallMsg: `${prefix}/capi/chat/msg/recall`,
+  loginUser: `${prefix}/capi/admin/login`,
 }

@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { ref, computed, provide } from 'vue'
 import type { ElInput } from 'element-plus'
 import { useWsLoginStore } from '@/stores/ws'
@@ -107,7 +107,7 @@ const insertText = (emoji: string) => {
               <span>
                 {{ currentReplyUser?.name }}: {{ currentMsgReply.message?.body.content }}</span
               >
-              <el-icon class="reply-msg-icon" :size="14" @click="onClearReply">
+              <el-icon :size="14" class="reply-msg-icon" @click="onClearReply">
                 <IEpClose />
               </el-icon>
             </div>
@@ -115,31 +115,31 @@ const insertText = (emoji: string) => {
               <div class="msg-input-wrapper">
                 <!-- @keydown.enter.prevent 阻止 textarea 默认换行事件 -->
                 <el-input
-                  name="input_content"
-                  :autosize="{ minRows: 1, maxRows: 4 }"
-                  class="msg-input"
-                  type="textarea"
                   ref="msg_input_ref"
-                  autofocus
                   v-model="inputMsg"
+                  :autosize="{ minRows: 1, maxRows: 4 }"
                   :disabled="!isSign || isSending"
                   :placeholder="isSign ? (isSending ? '消息发送中' : '来聊点什么吧~') : ''"
+                  autofocus
+                  class="msg-input"
+                  name="input_content"
+                  type="textarea"
                   @keydown.enter.prevent.exact
                   @keydown.enter.exact="sendMsgHandler"
                   @keydown.shift.enter.exact="onWrap"
                   @keydown.ctrl.enter.exact="onWrap"
                   @keydown.meta.enter.exact="onWrap"
                 />
-                <div class="chat-not-login-mask" :hidden="isSign">
+                <div :hidden="isSign" class="chat-not-login-mask">
                   <ElIcon class="icon-lock"><IEpLock /></ElIcon>
                   <a class="login-link" @click="onShowLoginBoxHandler">点我登录</a>之后再发言~
                 </div>
               </div>
               <el-popover
-                placement="top-end"
-                effect="dark"
-                title=""
                 :width="client === 'PC' ? 418 : '95%'"
+                effect="dark"
+                placement="top-end"
+                title=""
                 trigger="click"
               >
                 <template #reference>
@@ -147,17 +147,17 @@ const insertText = (emoji: string) => {
                 </template>
                 <ul class="emoji-list">
                   <li
-                    class="emoji-item"
                     v-for="(emoji, $index) of emojis"
                     :key="$index"
                     v-login="() => insertText(emoji)"
+                    class="emoji-item"
                   >
                     {{ emoji }}
                   </li>
                 </ul>
               </el-popover>
-              <button class="send-button" :disabled="!inputMsg.length" @click="sendMsgHandler"
-                >🚀</button
+              <button :disabled="!inputMsg.length" class="send-button" @click="sendMsgHandler"
+                >Send</button
               >
             </div>
           </div>
@@ -168,4 +168,4 @@ const insertText = (emoji: string) => {
   </div>
 </template>
 
-<style lang="scss" src="./styles.scss" scoped />
+<style lang="scss" scoped src="./styles.scss" />

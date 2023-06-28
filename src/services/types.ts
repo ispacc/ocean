@@ -79,6 +79,10 @@ export type UserItem = {
   uid: number
 }
 
+export type User = {
+  token: string
+}
+
 export type GroupStatisticType = {
   /** 在线人数 */
   onlineNum: number

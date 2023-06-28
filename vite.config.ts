@@ -72,7 +72,7 @@ export default defineConfig(({ mode }) => {
           // 本地配置到 .env 里面修改。生产配置在 .env.production 里面
           target: envConfig.VITE_API_PREFIX,
           changeOrigin: true,
-          // rewrite: path => path.replace(/^\/api/, '')
+          rewrite: (path) => path.replace(/^\/capi/, ''),
         },
       },
     },

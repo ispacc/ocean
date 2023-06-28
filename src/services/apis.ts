@@ -11,6 +11,7 @@ import type {
   CacheBadgeItem,
   CacheUserReq,
   CacheBadgeReq,
+  User,
 } from '@/services/types'
 import { alovaIns } from './request'
 import urls from './urls'
@@ -20,6 +21,8 @@ const postRequest = <T>(url: string, params?: any) => alovaIns.Post<T, unknown>(
 const putRequest = <T>(url: string, params?: any) => alovaIns.Put<T, unknown>(url, params)
 
 export default {
+  /** 用户登录 */
+  loginUser: (data?: any) => postRequest<User>(urls.loginUser, data),
   /** 获取群成员列表 */
   getGroupList: (params?: any) => getRequest<ListResponse<UserItem>>(urls.getGroupUserList, params),
   /** 获取群成员统计 */

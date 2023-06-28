@@ -41,9 +41,9 @@ export const alovaIns = createAlova({
   },
 
   // 响应拦截器，也与axios类似
-  responsed: async (response) => {
+  responded: async (response) => {
     const json = await response.json()
-    if (response.status !== 200 || !json.success) {
+    if (response.status !== 200) {
       // 这边抛出错误时，将会进入请求失败拦截器内
       if (json.errMsg) {
         // 空 token 且 状态码 401 不弹提示
