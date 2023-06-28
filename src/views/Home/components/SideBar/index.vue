@@ -31,10 +31,10 @@ const mockData = computed(() => {
     },
     {
       id: 2,
-      msgName: '通知',
-      name: '机器人',
+      msgName: '我儿刘聪专用群',
+      name: '我儿刘聪专用群',
       avatar: mallChatLogo,
-      tag: '机器人',
+      tag: '我儿刘聪专用群',
       lastMsg: '欢迎使用Ocean',
       lastMsgTime: '13:54',
     },
