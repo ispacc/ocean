@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { computed, ref } from 'vue'
 import { useChatStore } from '@/stores/chat'
 import { useUserInfo } from '@/hooks/useCached'
@@ -22,12 +22,11 @@ const mockData = computed(() => {
   return [
     {
       id: 1,
-      msgName: 'MallChat 用户群',
+      msgName: 'Ocean 用户群',
       name: lastUserInfo.value.name,
       avatar: mallChatLogo,
       tag: '官方',
-      lastMsg:
-        message?.type === 2 ? '撤回了一条消息' : message?.body?.content || '欢迎使用MallChat',
+      lastMsg: message?.type === 2 ? '撤回了一条消息' : message?.body?.content || '欢迎使用Ocean',
       lastMsgTime: formatTimestamp(message?.sendTime),
     },
     {
@@ -36,7 +35,7 @@ const mockData = computed(() => {
       name: '机器人',
       avatar: mallChatLogo,
       tag: '机器人',
-      lastMsg: '欢迎使用MallChat',
+      lastMsg: '欢迎使用Ocean',
       lastMsgTime: '13:54',
     },
   ]
@@ -51,7 +50,7 @@ const mockData = computed(() => {
       :class="['chat-message-item ', { active: activeChat === item.id }]"
       @click="activeChat = item.id"
     >
-      <el-avatar shape="circle" :size="38" :src="item.avatar" />
+      <el-avatar :size="38" :src="item.avatar" shape="circle" />
       <div class="message-info">
         <div style="white-space: nowrap">
           <span class="person">{{ item.msgName }}</span>
@@ -64,4 +63,4 @@ const mockData = computed(() => {
   </div>
 </template>
 
-<style lang="scss" src="./styles.scss" scoped />
+<style lang="scss" scoped src="./styles.scss" />
