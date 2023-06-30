@@ -1,12 +1,11 @@
 /// <reference types="vite/client" />
 
-interface ImportMetaEnv {
-  /** API 前缀 */
-  readonly VITE_API_PREFIX: string
-  /** WS 地址 */
-  readonly VITE_WS_URL: string
+declare module '*.vue' {
+  import { DefineComponent } from 'vue';
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/ban-types
+  const component: DefineComponent<{}, {}, any>;
+  export default component;
 }
-
-interface ImportMeta {
-  readonly env: ImportMetaEnv
+interface ImportMetaEnv {
+  readonly VITE_API_BASE_URL: string;
 }
