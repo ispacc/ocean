@@ -1,28 +1,26 @@
-<script setup lang="ts">
-import { RouterView } from 'vue-router'
-// 全局导入 toast 样式
-import 'element-plus/es/components/message/style/css'
-</script>
-
 <template>
-  <div class="app-wrapper">
-    <RouterView />
-  </div>
+  <a-config-provider :locale="locale">
+    <router-view />
+    <global-setting />
+  </a-config-provider>
 </template>
-<style scoped>
-.app-wrapper {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  background-image: url('@/assets/login_bg.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
 
-@supports (background-image: url('@/assets/login_bg.webp')) {
-  .app-wrapper {
-    background-image: url('@/assets/login_bg.webp');
-  }
-}
-</style>
+<script lang="ts" setup>
+  import { computed } from 'vue';
+  import enUS from '@arco-design/web-vue/es/locale/lang/en-us';
+  import zhCN from '@arco-design/web-vue/es/locale/lang/zh-cn';
+  import GlobalSetting from '@/components/global-setting/index.vue';
+  import useLocale from '@/hooks/locale';
+
+  const { currentLocale } = useLocale();
+  const locale = computed(() => {
+    switch (currentLocale.value) {
+      case 'zh-CN':
+        return zhCN;
+      case 'en-US':
+        return enUS;
+      default:
+        return enUS;
+    }
+  });
+</script>

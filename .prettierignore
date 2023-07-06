@@ -1,5 +1,7 @@
-out
-dist
-pnpm-lock.yaml
-LICENSE.md
-node_modules
+/dist/*
+.local
+.output.js
+/node_modules/**
+
+**/*.svg
+**/*.sh
