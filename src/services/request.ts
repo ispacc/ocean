@@ -4,17 +4,20 @@ import VueHook from 'alova/vue'
 import { ElMessage } from 'element-plus'
 
 function getToken() {
-  let tempToken = ''
+  let tempToken: string
+
   return {
-    get() {
-      if (tempToken) return tempToken
-      const token = localStorage.getItem('TOKEN')
+    get(): string | null {
+      if (tempToken) {
+        return tempToken
+      }
+      const token = localStorage.getItem('tokenValue')
       if (token) {
         tempToken = token
       }
-      return tempToken
+      return tempToken || null
     },
-    clear() {
+    clear(): void {
       tempToken = ''
     },
   }
@@ -35,7 +38,9 @@ export const alovaIns = createAlova({
   // 设置全局的请求拦截器，与axios相似
   beforeRequest({ config }) {
     // 假设我们需要添加token到请求头
-    config.headers.Authorization = `Bearer ${computedToken.get()}`
+    config.headers[
+      localStorage.getItem('tokenName') || 'orion-token'
+    ] = `Bearer ${computedToken.get()}`
 
     config.headers['Content-Type'] = 'application/json; charset=utf-8'
   },
@@ -45,14 +50,14 @@ export const alovaIns = createAlova({
     const json = await response.json()
     if (response.status !== 200) {
       // 这边抛出错误时，将会进入请求失败拦截器内
-      if (json.errMsg) {
+      if (json.code !== 200) {
         // 空 token 且 状态码 401 不弹提示
         if (!computedToken.get() && response.status === 401) {
           //
         } else {
-          ElMessage.error(json.errMsg)
+          ElMessage.error(json.message)
         }
-        throw new Error(json.errMsg)
+        throw new Error(json.message)
       } else {
         throw new Error(json.message)
       }

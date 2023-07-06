@@ -80,7 +80,8 @@ export type UserItem = {
 }
 
 export type User = {
-  token: string
+  tokenValue: string
+  tokenName: string
 }
 
 export type GroupStatisticType = {
@@ -109,6 +110,7 @@ export enum ActType {
   /** 取消 */
   Cancel,
 }
+
 export enum MarkType {
   Like = 1,
   DisLike,
