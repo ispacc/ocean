@@ -16,6 +16,7 @@
     "nuxt": "^3.6.2"
   },
   "dependencies": {
-    "@nuxtjs/proxy": "^2.1.0"
+    "@nuxtjs/proxy": "^2.1.0",
+    "element-plus": "^2.3.7"
   }
 }
