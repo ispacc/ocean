@@ -3,8 +3,8 @@
     <div class="mb-2 text-4xl">Welcome to Orion</div>
     <div class="mb-4">Log in with your Orion account to continue</div>
     <div class="flex flex-row gap-5">
-      <NuxtLink class="shadow-md hover:shadow-indigo-500/50" to="/login">Log in</NuxtLink>
-      <NuxtLink class="shadow-md hover:shadow-indigo-500/50" to="/signup">Sign Up</NuxtLink>
+      <NuxtLink class="dark:shadow-md hover:shadow-indigo-500/50" to="/login">Log in</NuxtLink>
+      <NuxtLink class="dark:shadow-md hover:shadow-indigo-500/50" to="/signup">Sign Up</NuxtLink>
     </div>
   </div>
 </template>

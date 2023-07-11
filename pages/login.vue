@@ -7,7 +7,7 @@
         <input
             id="username"
             v-model="username"
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            class="dark:bg-black shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
             placeholder="Enter your username" type="text">
       </div>
       <div class="mb-4">
@@ -15,17 +15,17 @@
         <input
             id="password"
             v-model="password"
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            class="dark:bg-black shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
             placeholder="Enter your password" type="password">
       </div>
       <div class="flex items-center justify-between">
         <button
-            class="shadow-md hover:shadow-indigo-500/50"
+            class="dark:shadow-md hover:shadow-indigo-500/50"
             @click="signIn"
         >
           Sign In
         </button>
-        <a class="shadow-md hover:shadow-indigo-500/50" href="#">Forgot
+        <a class="dark:shadow-md hover:shadow-indigo-500/50" href="#">Forgot
           Password?</a>
       </div>
     </div>
