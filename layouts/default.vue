@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen">
+  <div class="flex h-screen flex-col flex-auto justify-center items-center font-serif">
     <div class="flex items-center font-serif justify-center text-2xl">
       <NuxtLink to="/">Home</NuxtLink>
       |

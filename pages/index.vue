@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-screen flex-col flex-auto justify-center items-center font-serif">
+  <div class="flex flex-col flex-auto justify-center items-center ">
     <div class="mb-2 text-4xl">Welcome to Orion</div>
     <div class="mb-4">Log in with your Orion account to continue</div>
     <div class="flex flex-row gap-5">

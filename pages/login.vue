@@ -35,17 +35,20 @@
 <script lang="ts" setup>
 const username = ref('')
 const password = ref('')
+const router = useRouter()
 
 const signIn = async () => {
-  // 在这里处理登录逻辑，可以使用 username.value 和 password.value 获取用户名和密码数据
-  console.log('Username:', username.value);
-  console.log('Password:', password.value);
-  const data = await $fetch('/api/admin/login', {
+  const data: any = await $fetch('/api/admin/login', {
     method: 'post',
     body: {
       username: username.value,
       password: password.value
     }
   })
+  console.log(data.data)
+  if (data.code !== 200) {
+    return ElMessage.error('账号名或密码错误')
+  }
+  await router.push('/chat/chatroom')
 };
 </script>
