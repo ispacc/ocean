@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-    modules: ["@element-plus/nuxt", "@nuxtjs/tailwindcss", 'nuxt-socket-io'],
+    modules: ["@element-plus/nuxt", "@nuxtjs/tailwindcss"],
     devtools: {enabled: true},
     app: {
         pageTransition: {name: 'page', mode: 'out-in'}
@@ -15,7 +15,7 @@ export default defineNuxtConfig({
                 "/api": {
                     target: "http://localhost:8081",
                     changeOrigin: true,
-                    rewrite: (path) => path.replace(/^\/api/, ""),
+                    rewrite: (path: string) => path.replace(/^\/api/, ""),
                 },
             }
         }

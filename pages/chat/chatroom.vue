@@ -100,6 +100,7 @@
             <div class="flex-grow ml-4">
               <div class="relative w-full">
                 <input
+                    v-model="message"
                     class="flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 dark:bg-white/10 pl-4 h-10"
                     type="text"/>
                 <button
@@ -139,8 +140,20 @@
 
 <script lang="ts" setup>
 
-const sendMessage = () => {
-  console.log('sss')
+import {WebSocketClient} from "~/utils/websocket";
 
-}
+let message: string = ''
+
+const socket = ref<WebSocketClient | null>(null)
+
+onMounted(() => {
+  socket.value = new WebSocketClient(`ws://localhost:8081/websocket?orion-token=Bearer ${localStorage.getItem('tokenValue')}`)
+  socket.value.connect();
+})
+const sendMessage = () => {
+  if (socket.value) {
+    socket.value.send(message);
+  }
+};
 </script>
+

@@ -49,6 +49,7 @@ const signIn = async () => {
   if (data.code !== 200) {
     return ElMessage.error('账号名或密码错误')
   }
+  localStorage.setItem('tokenValue', data.data.tokenValue)
   await router.push('/chat/chatroom')
 };
 </script>
