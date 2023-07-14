@@ -147,7 +147,7 @@ let message: string = ''
 const socket = ref<WebSocketClient | null>(null)
 
 onMounted(() => {
-  socket.value = new WebSocketClient(`ws://localhost:8081/websocket?orion-token=Bearer ${localStorage.getItem('tokenValue')}`)
+  socket.value = new WebSocketClient(`wss://api.flysean.love/websocket?orion-token=Bearer ${localStorage.getItem('tokenValue')}`)
   socket.value.connect();
 })
 const sendMessage = () => {
