@@ -8,7 +8,7 @@
             id="username"
             v-model="username"
             class="dark:bg-black shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-            placeholder="Enter your username" type="text">
+            type="text">
       </div>
       <div class="mb-4">
         <label class="block text-sm font-bold mb-2" for="password">Password</label>
@@ -16,7 +16,7 @@
             id="password"
             v-model="password"
             class="dark:bg-black shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-            placeholder="Enter your password" type="password">
+            type="password">
       </div>
       <div class="flex items-center justify-between">
         <button
@@ -33,23 +33,22 @@
 </template>
 
 <script lang="ts" setup>
+
+import httpRequest from "~/utils/request"
+
 const username = ref('')
 const password = ref('')
 const router = useRouter()
 
 const signIn = async () => {
-  const data: any = await $fetch('/api/admin/login', {
-    method: 'post',
-    body: {
-      username: username.value,
-      password: password.value
-    }
+  const data: any = await httpRequest.post('/admin/login', {
+    username: username.value,
+    password: password.value
   })
-  console.log(data.data)
   if (data.code !== 200) {
-    return ElMessage.error('账号名或密码错误')
+    return ElMessage.error(data.message)
   }
   localStorage.setItem('tokenValue', data.data.tokenValue)
   await router.push('/chat/chatroom')
-};
+}
 </script>
