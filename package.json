@@ -3,20 +3,20 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --dotenv .env.local",
     "generate": "nuxt generate --dotenv .env.production",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@element-plus/nuxt": "^1.0.5",
     "@nuxt/devtools": "latest",
-    "@nuxtjs/tailwindcss": "^6.8.0",
-    "@types/node": "^18.16.19",
-    "nuxt": "^3.6.2"
+    "@nuxtjs/tailwindcss": "^6.11.2",
+    "@types/node": "^18.19.10",
+    "nuxt": "^3.9.3"
   },
   "dependencies": {
     "@nuxtjs/proxy": "^2.1.0",
-    "element-plus": "^2.3.7"
+    "element-plus": "^2.5.3",
+    "@element-plus/nuxt": "^1.0.7"
   }
 }

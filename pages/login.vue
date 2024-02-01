@@ -34,21 +34,20 @@
 
 <script lang="ts" setup>
 
-import httpRequest from "~/utils/request"
-
 const username = ref('')
 const password = ref('')
 const router = useRouter()
-
 const signIn = async () => {
-  const data: any = await httpRequest.post('/admin/login', {
-    username: username.value,
-    password: password.value
-  })
-  if (data.code !== 200) {
-    return ElMessage.error(data.message)
-  }
-  localStorage.setItem('tokenValue', data.data.tokenValue)
+  // const data: any = await httpRequest.post('/admin/login', {
+  //   username: username.value,
+  //   password: password.value
+  // })
+  // if (data.code !== 200) {
+  //   return ElMessage.error(data.message)
+  // }
+  // localStorage.setItem('tokenValue', data.data.tokenValue)
   await router.push('/chat/chatroom')
 }
+
+
 </script>

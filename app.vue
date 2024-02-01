@@ -7,7 +7,6 @@
   </div>
 </template>
 <script lang="ts" setup>
-
 </script>
 <style>
 .page-enter-active,

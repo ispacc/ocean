@@ -1,8 +1,8 @@
-import {UseFetchOptions} from "nuxt/app";
+import type {UseFetchOptions} from "nuxt/app";
 
 type Methods = "GET" | "POST" | "DELETE" | "PUT";
 
-const BASE_URL = '/api';
+const BASE_URL = 'api';
 
 export interface IResultData<T> {
     code: number;
